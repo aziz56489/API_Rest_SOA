@@ -1,0 +1,63 @@
+PARTIE 2
+a) Les limites des projections dans REST
+Une projection REST permet de sélectionner certains champs d'une ressource, par exemple le nom et l'email d'un utilisateur sans récupérer toutes ses informations.
+Cependant, REST présente plusieurs limites.
+1. Over-fetching (récupération excessive)
+Le client reçoit des données dont il n'a pas besoin.
+Exemple : le frontend veut seulement le nom de l'utilisateur, mais l'API renvoie son nom, son email, son adresse et d'autres informations.
+2. Under-fetching (récupération insuffisante)
+Le client doit effectuer plusieurs requêtes pour obtenir toutes les informations nécessaires.
+Exemple : une première requête récupère l'utilisateur et une deuxième récupère ses commandes.
+3. Projections prédéfinies
+Les projections REST sont souvent définies côté serveur. Si le client veut une combinaison de champs différente, il faut parfois créer une nouvelle projection ou modifier l'API.
+4. Multiplication des requêtes
+Une page peut nécessiter plusieurs appels à différentes URL, ce qui augmente les échanges entre le client et le serveur.
+Conclusion : les projections REST permettent de limiter les données retournées, mais elles ne donnent pas toujours au client la liberté de demander précisément les champs et les relations dont il a besoin. GraphQL apporte une solution en laissant le client décrire les données souhaitées dans une seule requête.
+b)
+REST et GraphQL sont deux approches permettant de développer des API pour faciliter la communication entre le client et le serveur.
+
+## 1. REST
+REST (Representational State Transfer) est un style d’architecture qui utilise les méthodes HTTP pour accéder aux ressources et les manipuler.
+
+REST utilise généralement plusieurs URL pour accéder aux différentes ressources. Cependant, il peut présenter deux limites :
+- **Over-fetching :** le client reçoit des données dont il n’a pas besoin.
+- **Under-fetching :** le client doit effectuer plusieurs requêtes pour obtenir toutes les données nécessaires.
+
+## 2. GraphQL
+
+GraphQL est un langage de requête pour les API développé par Facebook en 2012 et rendu open source en 2015.
+
+Il permet au client de demander exactement les données dont il a besoin, en précisant les champs souhaités dans sa requête.
+
+GraphQL utilise principalement trois types d’opérations :
+- **Query :** récupérer des données.
+- **Mutation :** ajouter, modifier ou supprimer des données.
+- **Subscription :** recevoir des mises à jour en temps réel.
+
+GraphQL permet ainsi de réduire le nombre de requêtes nécessaires et d’éviter la récupération de données inutiles.
+
+## 3. Tableau comparatif entre REST et GraphQL
+
+| Critère | REST | GraphQL |
+|---|---|---|
+| Principe | Architecture basée sur les ressources | Langage de requête pour les API |
+| Points d’accès | Plusieurs URL selon les ressources | Généralement un point d’entrée, par exemple /graphql |
+| Sélection des données | Principalement définie par le serveur | Définie par le client |
+| Over-fetching | Peut se produire | Réduit grâce au choix des champs |
+| Under-fetching | Peut nécessiter plusieurs requêtes | Permet de récupérer plusieurs données liées dans une seule requête |
+| Lecture des données | Méthode GET | Query |
+| Modification des données | POST, PUT, PATCH, DELETE | Mutation |
+| Format des réponses | Généralement JSON | Généralement JSON |
+| Gestion des erreurs | Utilise les codes HTTP | Utilise les erreurs GraphQL dans la réponse, en plus des statuts HTTP |
+| Mise en cache | Facilitée par les mécanismes HTTP | Peut nécessiter une configuration spécifique |
+| Complexité | Simple à mettre en place pour les API classiques | Nécessite un schéma et la définition des opérations |
+## Conclusion
+
+REST est une solution simple et adaptée à de nombreuses applications. GraphQL offre davantage de flexibilité en permettant au client de choisir précisément les données à récupérer. Il permet de limiter l’over-fetching et l’under-fetching, mais nécessite une configuration et une gestion plus avancées, notamment pour la sécurité et la mise en cache.
+
+PARTIE 3
+a)"value":2.05722704E8
+b)"COUNT","value":6.0
+"TOTAL_TIME","value":0.9752761000000001
+"MAX","value":0.1688208}
+c)"value":25.0
